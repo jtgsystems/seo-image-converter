@@ -1,0 +1,10 @@
+# Latest 2025 Versions - Absolute Newest
+Pillow>=11.3.0
+requests>=2.32.0
+click>=8.2.0  
+rich>=14.1.0
+tqdm>=4.67.0
+PyYAML>=6.0.2
+python-dotenv>=1.1.0
+dearpygui>=2.1.0
+ollama>=0.5.3
