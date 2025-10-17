@@ -17,8 +17,8 @@ class AIImageAnalyzer:
         """Initialize AI analyzer with Ollama configuration."""
         self.ollama_config = config.ollama
         self.endpoint = self.ollama_config.get('endpoint', 'http://localhost:11434/api/generate')
-        self.model = self.ollama_config.get('model', 'llava:latest')
-        self.timeout = self.ollama_config.get('timeout', 30)
+        self.model = self.ollama_config.get('model', 'qwen2.5vl:7b')  # UPGRADED from llava:latest - much better accuracy!
+        self.timeout = self.ollama_config.get('timeout', 45)  # Increased for better results
         self.max_retries = self.ollama_config.get('max_retries', 3)
         self.retry_delay = self.ollama_config.get('retry_delay', 2)
         
@@ -92,9 +92,9 @@ class AIImageAnalyzer:
             "images": [image_b64],
             "stream": False,
             "options": {
-                "temperature": 0.1,  # Lower temperature for more consistent results
-                "top_p": 0.9,
-                "top_k": 40,
+                "temperature": 0.2,  # Qwen2.5-VL works better with slightly higher temp for creative keywords
+                "top_p": 0.95,       # Increased for more diverse, specific keywords
+                "top_k": 50,         # Increased diversity for better SEO terms
             }
         }
         

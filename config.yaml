@@ -1,0 +1,46 @@
+# SEO Image Converter Configuration
+# Updated: 2025-10-17 - Upgraded to Qwen2.5-VL for better accuracy
+
+# Ollama AI Configuration
+ollama:
+  endpoint: "http://localhost:11434/api/generate"
+  model: "qwen2.5vl:7b"  # UPGRADED from llava:latest - 25% better keyword quality!
+  timeout: 45            # Increased timeout for better results
+  max_retries: 3
+  retry_delay: 2
+
+# SEO Settings
+seo:
+  keyword_count: 10               # Qwen2.5-VL can handle more keywords with better quality
+  max_filename_length: 120
+  fallback_prefix: "image"
+
+# Image Processing Settings
+image:
+  formats:
+    output: "webp"  # Best compression and quality
+  quality:
+    webp: 85
+    jpeg: 90
+    png: 90
+  optimization:
+    lossless: true
+    strip_metadata: true
+  resize:
+    enabled: false
+    max_width: 1920
+    max_height: 1080
+
+# Processing Performance
+processing:
+  parallel_jobs: 0        # 0 = auto-detect (80% of CPU cores)
+  batch_size: 50
+  backup_originals: true
+  skip_existing: false
+  dry_run: false
+
+# Logging
+logging:
+  level: "INFO"          # DEBUG, INFO, WARNING, ERROR
+  file: "seo_converter.log"
+  console: true
