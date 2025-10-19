@@ -1,12 +1,10 @@
 """Modern GUI interface for SEO Image Converter using CustomTkinter."""
 
-import os
 import sys
 import threading
 import time
-import json
 from pathlib import Path
-from typing import Optional, List, Dict
+from typing import Optional
 import tkinter as tk
 from tkinter import filedialog, messagebox, ttk
 from tkinter.scrolledtext import ScrolledText
@@ -19,7 +17,7 @@ except ImportError:
     HAS_MODERN_GUI = False
     print("Warning: Modern GUI dependencies not available. Install with: pip install customtkinter tkinterdnd2")
 
-from .processor import SEOImageProcessor, ProcessingResult
+from .processor import ProcessingResult
 from .config import config
 from .logger import logger
 

@@ -1,16 +1,13 @@
 """Modern GUI interface using Dear PyGui - Latest 2025 Framework."""
 
-import os
 import sys
 import threading
-import time
 import json
 from pathlib import Path
-from typing import Optional, List, Dict, Callable
+from typing import Optional
 import traceback
 
 import dearpygui.dearpygui as dpg
-from PIL import Image
 
 from .processor import SEOImageProcessor, ProcessingResult
 from .config import config

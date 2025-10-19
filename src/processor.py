@@ -1,10 +1,8 @@
 """Main processing engine with parallel support and comprehensive workflow."""
 
-import os
 import shutil
-import tempfile
 from pathlib import Path
-from typing import List, Dict, Optional, Callable, Tuple
+from typing import List, Dict, Optional, Callable
 from concurrent.futures import ThreadPoolExecutor, as_completed
 import multiprocessing as mp
 from dataclasses import dataclass

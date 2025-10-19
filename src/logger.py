@@ -3,10 +3,8 @@
 import logging
 import sys
 from pathlib import Path
-from typing import Optional
 from rich.console import Console
 from rich.logging import RichHandler
-from rich.text import Text
 
 from .config import config
 
@@ -39,7 +37,8 @@ def setup_logger(name: str = __name__) -> logging.Logger:
     
     # Get logging configuration
     log_config = config.logging
-    log_level = getattr(logging, log_config.get('level', 'INFO'))
+    level_str = log_config.get('level', 'INFO').upper()  # Ensure uppercase
+    log_level = getattr(logging, level_str, logging.INFO)  # Fallback to INFO if invalid
     log_file = log_config.get('file', 'conversion_log.txt')
     use_colors = log_config.get('console_colors', True)
     

@@ -1,14 +1,11 @@
 """Modern SEO Image Converter GUI using latest Dear PyGui 2.1.0 patterns."""
 
-import asyncio
 import os
 import sys
-import threading
 import time
 from pathlib import Path
 from typing import Optional, List
 from concurrent.futures import ThreadPoolExecutor
-import functools
 
 import dearpygui.dearpygui as dpg
 
@@ -543,7 +540,7 @@ class SEOImageConverterGUI:
                     dpg.split_frame()
                 complete_on_main_thread()
             
-        except Exception as e:
+        except Exception:
             if self.processing:
                 # Thread-safe error callback
                 def error_on_main_thread():

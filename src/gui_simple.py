@@ -1,11 +1,9 @@
 """Simple working GUI using Dear PyGui - Latest 2025 Framework."""
 
 import os
-import sys
 import threading
-import time
 from pathlib import Path
-from typing import Optional, List
+from typing import Optional
 
 import dearpygui.dearpygui as dpg
 

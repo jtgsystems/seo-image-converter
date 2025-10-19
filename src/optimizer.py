@@ -2,9 +2,8 @@
 
 import os
 import tempfile
-import subprocess
 from pathlib import Path
-from typing import Optional, Dict, Tuple
+from typing import Dict, Tuple
 from PIL import Image, ImageOps
 # import magic  # Optional - fallback to extension checking
 

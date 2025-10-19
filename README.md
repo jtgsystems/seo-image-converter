@@ -146,6 +146,30 @@ processing:
 4. **View Results**: Detailed statistics and per-file results
 5. **Export Data**: Save results as JSON or CSV
 
+## 🛠️ Additional Tools
+
+The `tools/` directory contains additional utilities for photo management:
+
+### AI Photo Sorter
+
+Automatically organize your photo collection using Qwen2.5-VL vision AI:
+
+```bash
+# Categorize and sort photos into intelligent folders
+python tools/photo_sorter.py /path/to/photos /path/to/sorted
+
+# Move files instead of copying
+python tools/photo_sorter.py /path/to/photos /path/to/sorted --move
+```
+
+**Features:**
+- **13 Smart Categories**: People, Nature, Objects, Documents, Architecture, Vehicles, Food, Technology, Art, Events, Sports, Animals
+- **Parallel Processing**: Fast batch categorization
+- **AI-Powered**: Uses the same Qwen2.5-VL model as the main converter
+- **Flexible**: Copy or move files with automatic duplicate handling
+
+See [tools/README.md](tools/README.md) for detailed usage and examples.
+
 ## 🔧 Architecture
 
 ### Core Components

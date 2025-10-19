@@ -10,11 +10,8 @@ from rich.console import Console
 from rich.table import Table
 from rich.progress import Progress, SpinnerColumn, TextColumn, BarColumn, TimeElapsedColumn
 from rich.panel import Panel
-from rich.text import Text
-from rich.tree import Tree
 
 from .processor import SEOImageProcessor, ProcessingResult
-from .config import config
 from .logger import logger
 
 console = Console()
