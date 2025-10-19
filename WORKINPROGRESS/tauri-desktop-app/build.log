@@ -1,0 +1,49 @@
+
+> jtg-ai-image-converter@1.0.0 build:web
+> vite build
+
+vite v5.4.20 building SSR bundle for production...
+transforming...
+node_modules/@sveltejs/kit/src/runtime/client/client.js (6:23): "untrack" is not exported by "node_modules/svelte/src/runtime/ssr.js", imported by "node_modules/@sveltejs/kit/src/runtime/client/client.js".
+✓ 100 modules transformed.
+rendering chunks...
+vite v5.4.20 building for production...
+transforming...
+node_modules/@sveltejs/kit/src/runtime/client/client.js (5:23): "untrack" is not exported by "node_modules/svelte/src/runtime/index.js", imported by "node_modules/@sveltejs/kit/src/runtime/client/client.js".
+✓ 75 modules transformed.
+rendering chunks...
+computing gzip size...
+.svelte-kit/output/client/_app/version.json                        0.03 kB │ gzip:  0.05 kB
+.svelte-kit/output/client/.vite/manifest.json                      2.23 kB │ gzip:  0.45 kB
+.svelte-kit/output/client/_app/immutable/entry/start.CXFV67D-.js   0.08 kB │ gzip:  0.09 kB
+.svelte-kit/output/client/_app/immutable/chunks/CRH7vrmA.js        0.11 kB │ gzip:  0.11 kB
+.svelte-kit/output/client/_app/immutable/nodes/0.0xcjN3_F.js       0.70 kB │ gzip:  0.47 kB
+.svelte-kit/output/client/_app/immutable/nodes/1.DmPwb8Pm.js       0.94 kB │ gzip:  0.56 kB
+.svelte-kit/output/client/_app/immutable/chunks/Jvh8J1kd.js        1.72 kB │ gzip:  0.82 kB
+.svelte-kit/output/client/_app/immutable/entry/app.Cz7kw_wy.js     6.35 kB │ gzip:  2.59 kB
+.svelte-kit/output/client/_app/immutable/chunks/DxWRKLMw.js        9.98 kB │ gzip:  4.08 kB
+.svelte-kit/output/client/_app/immutable/nodes/2.kQ7eJ1SW.js      15.10 kB │ gzip:  5.99 kB
+.svelte-kit/output/client/_app/immutable/chunks/Bmv5hd8y.js       30.98 kB │ gzip: 12.20 kB
+✓ built in 320ms
+.svelte-kit/output/server/.vite/manifest.json                  2.68 kB
+.svelte-kit/output/server/entries/pages/_layout.js             0.03 kB
+.svelte-kit/output/server/entries/fallbacks/layout.svelte.js   0.12 kB
+.svelte-kit/output/server/chunks/environment.js                0.25 kB
+.svelte-kit/output/server/internal.js                          0.32 kB
+.svelte-kit/output/server/entries/fallbacks/error.svelte.js    0.60 kB
+.svelte-kit/output/server/chunks/utils.js                      0.62 kB
+.svelte-kit/output/server/chunks/shared.js                     0.68 kB
+.svelte-kit/output/server/chunks/tauri.js                      0.78 kB
+.svelte-kit/output/server/chunks/exports.js                    2.51 kB
+.svelte-kit/output/server/chunks/vendor.js                     2.81 kB
+.svelte-kit/output/server/chunks/internal.js                   3.60 kB
+.svelte-kit/output/server/entries/pages/_page.svelte.js        4.47 kB
+.svelte-kit/output/server/remote-entry.js                      5.45 kB
+.svelte-kit/output/server/index.js                            54.46 kB
+✓ built in 961ms
+
+Run npm run preview to preview your production build locally.
+
+> Using @sveltejs/adapter-static
+  Wrote site to "build"
+  ✔ done
