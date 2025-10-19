@@ -254,7 +254,7 @@ def main(input_directory: Path, output: Optional[Path], config_file: Optional[Pa
                 "To enable AI-powered naming:\n"
                 "1. Install Ollama: https://ollama.ai\n"
                 "2. Start service: ollama serve\n"
-                "3. Pull LLaVA model: ollama pull llava",
+                "3. Pull Qwen2.5-VL model: ollama pull qwen2.5vl:7b",
                 title="AI Service Warning",
                 border_style="yellow"
             ))

@@ -1,4 +1,4 @@
-"""AI-powered image analysis using Ollama/LLaVA for SEO optimization."""
+"""AI-powered image analysis using Ollama/Qwen2.5-VL for SEO optimization."""
 
 import base64
 import json
@@ -11,7 +11,7 @@ from .config import config
 from .logger import logger
 
 class AIImageAnalyzer:
-    """AI-powered image analyzer using Ollama/LLaVA."""
+    """AI-powered image analyzer using Ollama/Qwen2.5-VL."""
     
     def __init__(self):
         """Initialize AI analyzer with Ollama configuration."""
@@ -72,7 +72,7 @@ class AIImageAnalyzer:
             return None
     
     def generate_seo_description(self, image_path: Path) -> Optional[str]:
-        """Generate SEO-optimized description for image using LLaVA."""
+        """Generate SEO-optimized description for image using Qwen2.5-VL."""
         if not self.is_ollama_available():
             logger.error("Ollama service not available")
             return None
@@ -175,7 +175,7 @@ Your response must ONLY contain the {self.keyword_count} keywords separated by h
         return None
     
     def _process_seo_response(self, response_text: str) -> str:
-        """Process and clean the SEO response from LLaVA."""
+        """Process and clean the SEO response from Qwen2.5-VL."""
         # Clean the response
         keywords = response_text.lower().strip()
         

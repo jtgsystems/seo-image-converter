@@ -2,7 +2,7 @@
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Dear PyGui](https://img.shields.io/badge/GUI-Dear%20PyGui%202.1.0-green.svg)](https://github.com/hoffstadt/DearPyGui)
-[![Ollama](https://img.shields.io/badge/AI-Ollama%2FLLaVA-orange.svg)](https://ollama.ai/)
+[![Ollama](https://img.shields.io/badge/AI-Ollama%2FQwen2.5--VL-orange.svg)](https://ollama.ai/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/jtgsystems/seo-image-converter.svg)](https://github.com/jtgsystems/seo-image-converter/stargazers)
 
@@ -10,11 +10,11 @@
 
 ## 🎯 What is SEO Image Converter?
 
-SEO Image Converter is a revolutionary **AI-powered image optimization tool** that combines cutting-edge **machine learning** with advanced **image compression** to boost your website's performance and search engine rankings. Using **Ollama/LLaVA integration**, it automatically generates **SEO-friendly filenames** and optimizes images for web performance.
+SEO Image Converter is a revolutionary **AI-powered image optimization tool** that combines cutting-edge **machine learning** with advanced **image compression** to boost your website's performance and search engine rankings. Using **Ollama/Qwen2.5-VL integration**, it automatically generates **SEO-friendly filenames** and optimizes images for web performance.
 
 ### 🏆 Why Choose SEO Image Converter?
 
-- **🤖 AI-Powered SEO Naming**: Automatically generates descriptive, keyword-rich filenames using LLaVA vision AI
+- **🤖 AI-Powered SEO Naming**: Automatically generates descriptive, keyword-rich filenames using Qwen2.5-VL vision AI
 - **⚡ Advanced Compression**: Supports WebP, PNG (Zopfli), and JPEG (MozJPEG) for maximum file size reduction
 - **🎨 Modern GUI**: Beautiful, responsive interface built with Dear PyGui 2.1.0 (2025 latest)
 - **🔄 Batch Processing**: Process hundreds of images simultaneously with parallel processing
@@ -25,7 +25,7 @@ SEO Image Converter is a revolutionary **AI-powered image optimization tool** th
 ## 🚀 Key Features
 
 ### AI-Powered Image Analysis
-- **LLaVA Vision Model Integration**: Analyzes image content to generate contextually relevant filenames
+- **Qwen2.5-VL Vision Model Integration**: Analyzes image content to generate contextually relevant filenames
 - **SEO Keyword Generation**: Creates search-engine-optimized filenames automatically
 - **Content Recognition**: Identifies objects, scenes, and concepts in images for better naming
 - **Fallback Naming**: Smart fallback system when AI analysis is unavailable
@@ -64,9 +64,9 @@ SEO Image Converter is a revolutionary **AI-powered image optimization tool** th
    ```bash
    # Install Ollama
    curl -fsSL https://ollama.ai/install.sh | sh
-   
-   # Pull LLaVA model
-   ollama pull llava
+
+   # Pull Qwen2.5-VL model
+   ollama pull qwen2.5vl:7b
    
    # Start Ollama service
    ollama serve
@@ -109,8 +109,8 @@ The application uses `config.yaml` for settings:
 # AI Configuration
 ollama:
   endpoint: "http://localhost:11434/api/generate"
-  model: "llava:latest"
-  timeout: 30
+  model: "qwen2.5vl:7b"
+  timeout: 45
 
 # Image Processing
 image:
@@ -151,7 +151,7 @@ processing:
 ### Core Components
 
 - **`processor.py`**: Main processing engine with parallel execution
-- **`ai_analyzer.py`**: Ollama/LLaVA integration for image analysis
+- **`ai_analyzer.py`**: Ollama/Qwen2.5-VL integration for image analysis
 - **`optimizer.py`**: Advanced image optimization (WebP, PNG, JPEG)
 - **`gui_dearpygui.py`**: Modern GPU-accelerated interface
 - **`cli.py`**: Command-line interface with rich output
@@ -159,7 +159,7 @@ processing:
 ### Technology Stack
 
 - **GUI Framework**: [Dear PyGui](https://github.com/hoffstadt/dearpygui) - Latest 2025 GPU-accelerated framework
-- **AI Integration**: [Ollama](https://ollama.ai/) with LLaVA vision model
+- **AI Integration**: [Ollama](https://ollama.ai/) with Qwen2.5-VL vision model
 - **Image Processing**: Pillow + specialized optimization libraries
 - **Compression**: 
   - WebP: Native Pillow optimization
@@ -189,7 +189,7 @@ processing:
 
 ### Processing Speed
 - **Parallel Processing**: 4-16 concurrent image operations
-- **AI Analysis**: 6-12 seconds per image (LLaVA 13B model)
+- **AI Analysis**: 4-8 seconds per image (Qwen2.5-VL 7B model)
 - **Optimization**: 1-3 seconds per image depending on size
 - **Batch Processing**: 100+ images processed efficiently
 
@@ -216,7 +216,7 @@ delicious-chocolate-cake-dessert-birthday-celebration-sweet.webp (0.4 MB) # 78% 
 1. **Ollama Not Found**
    - Install Ollama: `curl -fsSL https://ollama.ai/install.sh | sh`
    - Start service: `ollama serve`
-   - Pull model: `ollama pull llava`
+   - Pull model: `ollama pull qwen2.5vl:7b`
 
 2. **Permission Errors**
    - Ensure write access to output directory
@@ -247,7 +247,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Dear PyGui**: Modern GPU-accelerated Python GUI framework
 - **Ollama Team**: Local LLM inference platform
-- **LLaVA**: Large Language and Vision Assistant
+- **Qwen2.5-VL**: Advanced Vision-Language Model by Alibaba Cloud
 - **Python Community**: Amazing ecosystem of libraries
 
 ## 🎯 About Us
@@ -281,7 +281,7 @@ We believe that AI-powered tools should be:
 `image optimization` `SEO tools` `web performance` `page speed optimization` `image compression` `website optimization` `search engine optimization` `web development tools` `image SEO` `page load speed` `core web vitals` `image conversion` `bulk image processing` `website performance` `SEO automation` `image metadata` `web optimization software` `site speed improvement` `image file size reduction` `SEO-friendly filenames`
 
 ### Technical Keywords  
-`python gui application` `dear pygui` `artificial intelligence` `machine learning` `computer vision` `ollama integration` `llava model` `local AI` `image processing` `batch processing` `parallel processing` `webp compression` `png optimization` `jpeg compression` `zopfli` `mozjpeg` `pillow python` `python imaging` `desktop application` `cross-platform` `open source`
+`python gui application` `dear pygui` `artificial intelligence` `machine learning` `computer vision` `ollama integration` `qwen2.5vl model` `local AI` `image processing` `batch processing` `parallel processing` `webp compression` `png optimization` `jpeg compression` `zopfli` `mozjpeg` `pillow python` `python imaging` `desktop application` `cross-platform` `open source`
 
 ### AI & Machine Learning Keywords
 `AI image analysis` `vision language model` `local AI inference` `image content recognition` `automated keyword generation` `AI-powered naming` `machine learning application` `computer vision API` `image classification` `content-aware optimization` `intelligent image processing` `AI workflow automation` `natural language processing` `multimodal AI` `vision transformer` `deep learning application`

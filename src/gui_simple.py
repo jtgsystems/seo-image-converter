@@ -41,7 +41,7 @@ class SEOImageConverterGUI:
             
             # Header
             dpg.add_text("🚀 SEO Image Converter - Latest 2025 Framework", color=[66, 150, 250])
-            dpg.add_text("AI-Powered Image Optimization with LLaVA + Dear PyGui 2.1.0", color=[100, 100, 100])
+            dpg.add_text("AI-Powered Image Optimization with Qwen2.5-VL + Dear PyGui 2.1.0", color=[100, 100, 100])
             dpg.add_separator()
             
             # Status

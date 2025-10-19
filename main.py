@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 SEO Image Converter - Main Entry Point
-AI-powered image optimization with SEO-friendly naming using Ollama/LLaVA
+AI-powered image optimization with SEO-friendly naming using Ollama/Qwen2.5-VL
 """
 
 import sys

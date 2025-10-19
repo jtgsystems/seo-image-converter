@@ -387,12 +387,12 @@ class SEOImageConverterGUI:
             
             dpg.add_spacer(height=5)
             
-            dpg.add_text("LLaVA Model:")
+            dpg.add_text("Qwen2.5-VL Model:")
             dpg.add_combo(
-                items=["llava:latest", "llava:7b", "llava:13b", "llava:34b"],
-                default_value=config.ollama.get('model', 'llava:latest'),
+                items=["qwen2.5vl:7b", "qwen2.5vl:latest", "qwen2.5vl:32b", "qwen2.5vl:72b"],
+                default_value=config.ollama.get('model', 'qwen2.5vl:7b'),
                 width=-1,
-                tag="llava_model"
+                tag="qwen_model"
             )
             
             dpg.add_spacer(height=5)
@@ -813,8 +813,8 @@ class SEOImageConverterGUI:
             # Update config from GUI
             if dpg.does_item_exist("ollama_endpoint"):
                 config.update('ollama.endpoint', dpg.get_value("ollama_endpoint"))
-            if dpg.does_item_exist("llava_model"):
-                config.update('ollama.model', dpg.get_value("llava_model"))
+            if dpg.does_item_exist("qwen_model"):
+                config.update('ollama.model', dpg.get_value("qwen_model"))
             if dpg.does_item_exist("seo_keywords"):
                 config.update('seo.keyword_count', dpg.get_value("seo_keywords"))
             if dpg.does_item_exist("max_dimension"):
