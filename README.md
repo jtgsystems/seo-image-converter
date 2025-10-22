@@ -324,3 +324,7 @@ We believe that AI-powered tools should be:
 **Built with ❤️ by [JTG Systems](https://github.com/jtgsystems) • Made for the developer community**
 
 </div>
+
+### SEO Keyword Cloud
+
+`seo` `image` `converter` `optimization` `compression` `webp` `png` `jpeg` `zopfli` `mozjpeg` `qwen25vl` `ollama` `ai` `vision` `filenames` `metadata` `automation` `workflow` `batch` `processing` `python` `dearpygui` `gui` `desktop` `performance` `analytics` `page` `speed` `lighthouse` `corewebvitals` `ranking` `search` `visibility` `ecommerce` `marketing` `content` `creators` `developers` `toolkit` `orchestration` `parallel` `threads` `pillow` `numpy` `responsive` `interface` `usability` `crossplatform` `cloudready` `accessibility`
