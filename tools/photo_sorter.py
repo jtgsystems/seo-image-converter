@@ -47,7 +47,7 @@ class PhotoCategory:
         EVENTS: "Parties, celebrations, weddings, concerts, gatherings",
         SPORTS: "Athletic activities, games, competitions, outdoor activities",
         ANIMALS: "Pets, wildlife, birds, insects, animals",
-        UNCLEAR: "Unclear, corrupted, or unidentifiable images"
+        UNCLEAR: "Unclear, corrupted, or unidentifiable images",
     }
 
     @classmethod
@@ -87,10 +87,12 @@ class AIPhotoSorter:
 
     def _create_categorization_prompt(self) -> str:
         """Create prompt for photo categorization."""
-        categories_text = "\n".join([
-            f"- {cat}: {PhotoCategory.get_description(cat)}"
-            for cat in PhotoCategory.all_categories()
-        ])
+        categories_text = "\n".join(
+            [
+                f"- {cat}: {PhotoCategory.get_description(cat)}"
+                for cat in PhotoCategory.all_categories()
+            ]
+        )
 
         return f"""Analyze this image and categorize it into ONE of these categories:
 
@@ -131,7 +133,7 @@ Category:"""
             "options": {
                 "temperature": 0.1,  # Low temperature for more consistent categorization
                 "top_p": 0.9,
-            }
+            },
         }
 
         # Get AI response
@@ -195,16 +197,27 @@ Category:"""
 
     def find_images(self) -> List[Path]:
         """Find all image files in source directory."""
-        image_extensions = {'.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp', '.tiff', '.heic'}
+        image_extensions = {
+            ".jpg",
+            ".jpeg",
+            ".png",
+            ".gif",
+            ".bmp",
+            ".webp",
+            ".tiff",
+            ".heic",
+        }
         image_files = []
 
         for ext in image_extensions:
-            image_files.extend(self.source_dir.rglob(f'*{ext}'))
-            image_files.extend(self.source_dir.rglob(f'*{ext.upper()}'))
+            image_files.extend(self.source_dir.rglob(f"*{ext}"))
+            image_files.extend(self.source_dir.rglob(f"*{ext.upper()}"))
 
         return sorted(set(image_files))
 
-    def sort_photos(self, limit: Optional[int] = None, parallel: bool = True) -> Dict[str, int]:
+    def sort_photos(
+        self, limit: Optional[int] = None, parallel: bool = True
+    ) -> Dict[str, int]:
         """
         Sort all photos in source directory.
 
@@ -244,7 +257,9 @@ Category:"""
             # Parallel processing
             max_workers = min(4, len(image_files))  # Limit concurrent AI requests
             with ThreadPoolExecutor(max_workers=max_workers) as executor:
-                futures = {executor.submit(self.process_image, img): img for img in image_files}
+                futures = {
+                    executor.submit(self.process_image, img): img for img in image_files
+                }
 
                 for future in as_completed(futures):
                     img_path, category, success = future.result()
@@ -256,7 +271,9 @@ Category:"""
                         failed += 1
 
                     # Progress
-                    logger.info(f"Progress: {processed}/{len(image_files)} ({processed*100//len(image_files)}%)")
+                    logger.info(
+                        f"Progress: {processed}/{len(image_files)} ({processed * 100 // len(image_files)}%)"
+                    )
         else:
             # Sequential processing
             for i, image_path in enumerate(image_files, 1):
@@ -267,12 +284,14 @@ Category:"""
                 else:
                     failed += 1
 
-                logger.info(f"Progress: {i}/{len(image_files)} ({i*100//len(image_files)}%)")
+                logger.info(
+                    f"Progress: {i}/{len(image_files)} ({i * 100 // len(image_files)}%)"
+                )
 
         # Summary
-        logger.info("="*60)
+        logger.info("=" * 60)
         logger.info("PHOTO SORTING COMPLETE")
-        logger.info("="*60)
+        logger.info("=" * 60)
         logger.info(f"Total processed: {processed} images")
         logger.info(f"Successfully sorted: {processed - failed}")
         logger.info(f"Failed: {failed}")
@@ -306,14 +325,18 @@ Examples:
 
   # Sequential processing (no parallel)
   python photo_sorter.py /path/to/photos /path/to/sorted --no-parallel
-        """
+        """,
     )
 
     parser.add_argument("source", type=Path, help="Source directory with photos")
     parser.add_argument("output", type=Path, help="Output directory for sorted photos")
-    parser.add_argument("--move", action="store_true", help="Move files instead of copying")
+    parser.add_argument(
+        "--move", action="store_true", help="Move files instead of copying"
+    )
     parser.add_argument("--limit", type=int, help="Maximum number of images to process")
-    parser.add_argument("--no-parallel", action="store_true", help="Disable parallel processing")
+    parser.add_argument(
+        "--no-parallel", action="store_true", help="Disable parallel processing"
+    )
 
     args = parser.parse_args()
 
@@ -328,16 +351,11 @@ Examples:
 
     # Create sorter
     sorter = AIPhotoSorter(
-        source_dir=args.source,
-        output_dir=args.output,
-        move_files=args.move
+        source_dir=args.source, output_dir=args.output, move_files=args.move
     )
 
     # Sort photos
-    sorter.sort_photos(
-        limit=args.limit,
-        parallel=not args.no_parallel
-    )
+    sorter.sort_photos(limit=args.limit, parallel=not args.no_parallel)
 
 
 if __name__ == "__main__":
