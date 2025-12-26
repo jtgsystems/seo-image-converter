@@ -1,17 +1,17 @@
 # SEO Image Converter Configuration
-# Updated: 2025-10-17 - Upgraded to Qwen2.5-VL for better accuracy
+# Updated: 2025-12-26 - Latest model and framework versions
 
 # Ollama AI Configuration
 ollama:
   endpoint: "http://localhost:11434/api/generate"
-  model: "qwen2.5vl:7b"  # UPGRADED from llava:latest - 25% better keyword quality!
-  timeout: 45            # Increased timeout for better results
+  model: "mistral:latest"  # UPDATED to mistral:latest for best performance
+  timeout: 45              # Increased timeout for better results
   max_retries: 3
   retry_delay: 2
 
 # SEO Settings
 seo:
-  keyword_count: 10               # Qwen2.5-VL can handle more keywords with better quality
+  keyword_count: 10               # Can handle more keywords with better quality
   max_filename_length: 120
   fallback_prefix: "image"
 
