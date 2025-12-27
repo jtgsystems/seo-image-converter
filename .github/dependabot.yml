@@ -1,15 +1,50 @@
 version: 2
 updates:
-  # Python dependencies
-  - package-ecosystem: "pip"
+  - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Toronto"
     open-pull-requests-limit: 10
-
-  # JavaScript dependencies in Tauri app
+    groups:
+      all:
+        patterns:
+          - "*"
+  - package-ecosystem: "cargo"
+    directory: "/WORKINPROGRESS/tauri-desktop-app/src-tauri"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 10
+    groups:
+      all:
+        patterns:
+          - "*"
   - package-ecosystem: "npm"
     directory: "/WORKINPROGRESS/tauri-desktop-app"
     schedule:
       interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Toronto"
     open-pull-requests-limit: 10
+    groups:
+      all:
+        patterns:
+          - "*"
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "09:00"
+      timezone: "America/Toronto"
+    open-pull-requests-limit: 10
+    groups:
+      all:
+        patterns:
+          - "*"
