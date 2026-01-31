@@ -2,6 +2,8 @@
 
 # 🚀 SEO Image Converter - AI-Powered Image Optimization Tool
 
+**Last Updated**: January 31, 2026 - Dependencies updated (Pillow 12.1.0, Rich 14.3.0, python-dotenv 1.2.1)
+
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
 [![Dear PyGui](https://img.shields.io/badge/GUI-Dear%20PyGui%202.1.0-green.svg)](https://github.com/hoffstadt/DearPyGui)
 [![Ollama](https://img.shields.io/badge/AI-Ollama%2FQwen2.5--VL-orange.svg)](https://ollama.ai/)
