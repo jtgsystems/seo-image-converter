@@ -27,7 +27,6 @@ env/
 ENV/
 
 # IDE
-.vscode/
 .idea/
 *.swp
 *.swo
@@ -45,3 +44,5 @@ Thumbs.db
 backups/
 output/
 converted_images/
+config.bat
+node_modules
