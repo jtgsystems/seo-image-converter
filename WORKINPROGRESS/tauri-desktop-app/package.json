@@ -5,10 +5,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
-    "build": "vite build",
-    "build:web": "vite build",
-    "build:tauri": "vite build && tauri build",
+    "dev": "node init && vite dev",
+    "build": "node init && vite build",
+    "build:web": "node init && vite build",
+    "build:tauri": "node init && vite build && tauri build",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
@@ -19,7 +19,7 @@
   },
   "dependencies": {
     "@sveltejs/adapter-static": "^3.0.1",
-    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/kit": "^2.70.3",
     "@sveltejs/vite-plugin-svelte": "^3.0.0",
     "@tauri-apps/api": "^1.5.3",
     "playwright": "^1.55.0",
